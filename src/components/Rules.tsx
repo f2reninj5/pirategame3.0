@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-function Rules() {
-    return (
-        <></>
-    );
+function Rules (): React.JSX.Element {
+  return (
+    <></>
+  )
 }
 
-export default Rules;
+export default Rules

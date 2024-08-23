@@ -1,9 +1,9 @@
-import React, {ReactNode} from 'react';
+import React, { type ReactNode } from 'react'
 
-function Panel({children}: { children: ReactNode }) {
-    return (
-        <div></div>
-    );
+function Panel ({ children }: { children: ReactNode }): React.JSX.Element {
+  return (
+    <div></div>
+  )
 }
 
-export default Panel;
+export default Panel

@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-function GridHistory() {
-    return (
-        <></>
-    )
+function GridHistory (): React.JSX.Element {
+  return (
+    <></>
+  )
 }
 
-export default GridHistory;
+export default GridHistory
