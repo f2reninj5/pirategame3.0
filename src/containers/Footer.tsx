@@ -3,7 +3,7 @@ import './Banner.css'
 
 function Footer({children}: { children: React.ReactNode }) {
     return (
-        <footer>{children}</footer>
+        <footer className="banner">{children}</footer>
     );
 }
 

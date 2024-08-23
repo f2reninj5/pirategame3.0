@@ -3,7 +3,7 @@ import './Banner.css'
 
 function Header({children}: { children: React.ReactNode }) {
     return (
-        <header>{children}</header>
+        <header className="banner">{children}</header>
     );
 }
 
