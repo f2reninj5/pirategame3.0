@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+#root {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+}
+
 p {
     margin: 0;
 }

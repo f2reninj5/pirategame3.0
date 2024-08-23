@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 
-function Panel() {
+function Panel({children}: { children: ReactNode }) {
     return (
         <div></div>
     );
