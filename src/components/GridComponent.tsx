@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react'
 import Grid from '../models/Grid'
+import './GridComponent.css'
 
 const enum GridActionType {
   Reset,
@@ -40,14 +41,14 @@ function GridComponent (): React.JSX.Element {
     cells.push(
       <div onClick={() => {
         handleSelectCell(cell.index)
-      }} key={cell.index}>
+      }} key={cell.index} className={cell.selected ? 'selected' : ''}>
         <p>{cell.label}</p>
       </div>
     )
   }
 
   return (
-    <div>
+    <div className="grid" style={{ gridTemplateColumns: `repeat(${grid.width}, 1fr)` }}>
       {cells}
     </div>
   )

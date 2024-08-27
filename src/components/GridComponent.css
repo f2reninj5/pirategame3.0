@@ -1,0 +1,11 @@
+.grid {
+    display: grid;
+}
+
+.selected {
+    background-color: lightgray;
+}
+
+.highlighted {
+    background-color: red;
+}
