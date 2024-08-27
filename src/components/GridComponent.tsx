@@ -1,31 +1,9 @@
-import React, { useReducer } from 'react'
-import Grid from '../models/Grid'
+import React from 'react'
+import type Grid from '../models/Grid'
 import './GridComponent.css'
+import { type GridAction, GridActionType } from '../App'
 
-const enum GridActionType {
-  Reset,
-  Select
-}
-
-type GridAction =
-  | { type: GridActionType.Reset }
-  | { type: GridActionType.Select, payload: { index: number } }
-
-function gridReducer (grid: Grid, action: GridAction): Grid {
-  switch (action.type) {
-    case GridActionType.Reset:
-      return new Grid(7, 7)
-    case GridActionType.Select:
-      grid.cells[action.payload.index].selected = true
-      return grid
-    default:
-      return grid
-  }
-}
-
-function GridComponent (): React.JSX.Element {
-  const [grid, dispatch] = useReducer(gridReducer, new Grid(7, 7))
-
+function GridComponent ({ grid, dispatch }: { grid: Grid, dispatch: React.Dispatch<GridAction> }): React.JSX.Element {
   function handleSelectCell (index: number): void {
     dispatch({
       type: GridActionType.Select,
@@ -34,8 +12,6 @@ function GridComponent (): React.JSX.Element {
   }
 
   const cells = []
-
-  console.log(grid)
 
   for (const cell of grid.cells) {
     cells.push(
