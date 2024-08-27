@@ -1,5 +1,5 @@
 import React from 'react'
-import './Banner.css'
+import './BannerContainer.css'
 
 function FooterContainer ({ children }: { children: React.ReactNode }): React.JSX.Element {
   return (
