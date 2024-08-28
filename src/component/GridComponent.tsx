@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import './GridComponent.css'
-import { GridActionType, GridContext } from '../App'
+
+import { GridActionType, GridContext } from '../context/GridContext'
 
 function GridComponent (): React.JSX.Element {
   const [{ grid }, dispatch] = useContext(GridContext)
