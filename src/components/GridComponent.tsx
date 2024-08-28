@@ -1,9 +1,10 @@
-import React from 'react'
-import type Grid from '../models/Grid'
+import React, { useContext } from 'react'
 import './GridComponent.css'
-import { type GridAction, GridActionType } from '../App'
+import { GridActionType, GridContext } from '../App'
 
-function GridComponent ({ grid, dispatch }: { grid: Grid, dispatch: React.Dispatch<GridAction> }): React.JSX.Element {
+function GridComponent (): React.JSX.Element {
+  const [{ grid }, dispatch] = useContext(GridContext)
+
   function handleSelectCell (index: number): void {
     dispatch({
       type: GridActionType.Select,

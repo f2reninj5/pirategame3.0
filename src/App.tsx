@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { createContext, useReducer } from 'react'
 import './App.css'
 import PanelContainer from './containers/PanelContainer'
 import HeaderContainer from './containers/HeaderContainer'
@@ -31,10 +31,12 @@ function gridReducer (state: { grid: Grid }, action: GridAction): { grid: Grid }
   }
 }
 
+export const GridContext = createContext<[{ grid: Grid }, dispatch: React.Dispatch<GridAction>]>([{ grid: new Grid(7, 7) }, () => undefined])
+
 export function App (): React.JSX.Element {
   const [{ grid }, dispatch] = useReducer(gridReducer, { grid: new Grid(7, 7) })
 
-  function handleRestGrid (): void {
+  function handleResetGrid (): void {
     dispatch({
       type: GridActionType.Reset
     })
@@ -42,24 +44,26 @@ export function App (): React.JSX.Element {
 
   return (
     <main className="App">
-      <HeaderContainer>
-        <button>Feedback</button>
-        <h1>Pirate Game (v3.0)</h1>
-        <button onClick={() => { handleRestGrid() }}>Reset</button>
-      </HeaderContainer>
-      <PanelContainer>
-        <GridHistoryComponent></GridHistoryComponent>
-        <RulesComponent></RulesComponent>
-      </PanelContainer>
-      <PanelContainer>
-        <GridComponent dispatch={dispatch} grid={grid}></GridComponent>
-      </PanelContainer>
-      <PanelContainer>
-        <GridSelectorComponent></GridSelectorComponent>
-        <PlayerShufflerComponent></PlayerShufflerComponent>
-      </PanelContainer>
-      <FooterContainer><p>Copyright © 2024 Maks Nowak. Licensed under the <a
+        <GridContext.Provider value={[{ grid }, dispatch]}>
+          <HeaderContainer>
+            <button>Feedback</button>
+            <h1>Pirate Game (v3.0)</h1>
+            <button onClick={() => { handleResetGrid() }}>Reset</button>
+          </HeaderContainer>
+          <PanelContainer>
+            <GridHistoryComponent></GridHistoryComponent>
+            <RulesComponent></RulesComponent>
+          </PanelContainer>
+          <PanelContainer>
+            <GridComponent></GridComponent>
+          </PanelContainer>
+          <PanelContainer>
+            <GridSelectorComponent></GridSelectorComponent>
+            <PlayerShufflerComponent></PlayerShufflerComponent>
+          </PanelContainer>
+          <FooterContainer><p>Copyright © 2024 Maks Nowak. Licensed under the <a
         href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.</p></FooterContainer>
+        </GridContext.Provider>
     </main>
   )
 }
