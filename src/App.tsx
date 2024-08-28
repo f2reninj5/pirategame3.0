@@ -1,14 +1,14 @@
 import React, { createContext, useReducer } from 'react'
 import './App.css'
-import PanelContainer from './containers/PanelContainer'
-import HeaderContainer from './containers/HeaderContainer'
-import FooterContainer from './containers/FooterContainer'
-import RulesComponent from './components/RulesComponent'
-import GridHistoryComponent from './components/GridHistoryComponent'
-import GridComponent from './components/GridComponent'
-import PlayerShufflerComponent from './components/PlayerShufflerComponent'
-import GridSelectorComponent from './components/GridSelectorComponent'
-import Grid from './models/Grid'
+import PanelContainer from './container/PanelContainer'
+import HeaderContainer from './container/HeaderContainer'
+import FooterContainer from './container/FooterContainer'
+import RulesComponent from './component/RulesComponent'
+import GridHistoryComponent from './component/GridHistoryComponent'
+import GridComponent from './component/GridComponent'
+import PlayerShufflerComponent from './component/PlayerShufflerComponent'
+import GridSelectorComponent from './component/GridSelectorComponent'
+import Grid from './model/Grid'
 
 export const enum GridActionType {
   Reset,
