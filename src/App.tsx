@@ -10,7 +10,7 @@ import PlayerShufflerComponent from './component/PlayerShufflerComponent'
 import GridSelectorComponent from './component/GridSelectorComponent'
 import { GridActionType, GridContext, GridContextProvider } from './context/GridContext'
 
-function Main (): React.JSX.Element {
+function Main (): React.ReactElement {
   const [, dispatch] = useContext(GridContext)
 
   function handleResetGrid (): void {
@@ -47,7 +47,7 @@ function Main (): React.JSX.Element {
   )
 }
 
-export function App (): React.JSX.Element {
+export function App (): React.ReactElement {
   return (
     <GridContextProvider>
         <Main></Main>

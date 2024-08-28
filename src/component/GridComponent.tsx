@@ -3,7 +3,7 @@ import './GridComponent.css'
 
 import { GridActionType, GridContext } from '../context/GridContext'
 
-function GridComponent (): React.JSX.Element {
+function GridComponent (): React.ReactElement {
   const [{ grid }, dispatch] = useContext(GridContext)
 
   function handleSelectCell (index: number): void {

@@ -26,7 +26,7 @@ export const GridContext = createContext<[{
   grid: Grid
 }, dispatch: React.Dispatch<GridAction>]>([{ grid: new Grid(7, 7) }, () => undefined])
 
-export function GridContextProvider ({ children }: { children: React.ReactNode }): React.JSX.Element {
+export function GridContextProvider ({ children }: { children: React.ReactNode }): React.ReactElement {
   const [{ grid }, dispatch] = useReducer(gridReducer, { grid: new Grid(7, 7) })
 
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import './BannerContainer.css'
 
-function FooterContainer ({ children }: { children: React.ReactNode }): React.JSX.Element {
+function FooterContainer ({ children }: { children: React.ReactNode }): React.ReactElement {
   return (
     <footer className="banner">{children}</footer>
   )

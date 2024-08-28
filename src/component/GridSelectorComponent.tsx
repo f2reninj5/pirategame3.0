@@ -1,7 +1,7 @@
 import React from 'react'
 import ChooseQueueComponent from './ChooseQueueComponent'
 
-function GridSelectorComponent (): React.JSX.Element {
+function GridSelectorComponent (): React.ReactElement {
   return (
     <div>
       <ChooseQueueComponent></ChooseQueueComponent>

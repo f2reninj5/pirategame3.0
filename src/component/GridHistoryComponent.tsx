@@ -1,6 +1,6 @@
 import React from 'react'
 
-function GridHistoryComponent (): React.JSX.Element {
+function GridHistoryComponent (): React.ReactElement {
   return (
     <></>
   )

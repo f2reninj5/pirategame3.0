@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ChooseQueueComponent (): React.JSX.Element {
+function ChooseQueueComponent (): React.ReactElement {
   return (
     <></>
   )

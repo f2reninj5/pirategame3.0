@@ -1,6 +1,6 @@
 import React from 'react'
 
-function RulesComponent (): React.JSX.Element {
+function RulesComponent (): React.ReactElement {
   return (
     <></>
   )

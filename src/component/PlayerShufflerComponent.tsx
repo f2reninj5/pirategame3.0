@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PlayerShufflerComponent (): React.JSX.Element {
+function PlayerShufflerComponent (): React.ReactElement {
   return (
     <></>
   )
