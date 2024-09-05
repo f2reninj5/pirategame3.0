@@ -3,19 +3,19 @@ import Grid from '../model/Grid'
 
 export const enum GridActionType {
   Reset,
-  Select
+  ToggleSelect
 }
 
 export type GridAction =
-    | { type: GridActionType.Reset }
-    | { type: GridActionType.Select, payload: { index: number } }
+  | { type: GridActionType.Reset }
+  | { type: GridActionType.ToggleSelect, payload: { index: number } }
 
 export function gridReducer (state: { grid: Grid }, action: GridAction): { grid: Grid } {
   switch (action.type) {
     case GridActionType.Reset:
       return { grid: new Grid(7, 7) }
-    case GridActionType.Select:
-      state.grid.cells[action.payload.index].selected = !state.grid.cells[action.payload.index].selected
+    case GridActionType.ToggleSelect:
+      state.grid.toggleCellSelected(action.payload.index)
       return { grid: state.grid }
     default:
       return state

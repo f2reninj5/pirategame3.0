@@ -8,7 +8,7 @@ function GridComponent (): React.ReactElement {
 
   function handleSelectCell (index: number): void {
     dispatch({
-      type: GridActionType.Select,
+      type: GridActionType.ToggleSelect,
       payload: { index }
     })
   }
