@@ -30,6 +30,6 @@ export function GridContextProvider ({ children }: { children: React.ReactNode }
   const [{ grid }, dispatch] = useReducer(gridReducer, { grid: new Grid(7, 7) })
 
   return (
-      <GridContext.Provider value={[{ grid }, dispatch]}>{children}</GridContext.Provider>
+    <GridContext.Provider value={[{ grid }, dispatch]}>{children}</GridContext.Provider>
   )
 }
