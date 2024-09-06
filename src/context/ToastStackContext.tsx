@@ -30,7 +30,7 @@ export const ToastStackContext = createContext<[{
 }, dispatch: React.Dispatch<ToastStackAction>]>([{ toastStack: new ToastStack() }, () => undefined])
 
 export function ToastStackContextProvider ({ children }: { children: React.ReactNode }): React.ReactElement {
-  const [{ toastStack }, dispatch] = useReducer(toastStackReducer, { grid: new ToastStack() })
+  const [{ toastStack }, dispatch] = useReducer(toastStackReducer, { toastStack: new ToastStack() })
 
   return (
     <ToastStackContext.Provider value={[{ toastStack }, dispatch]}>{children}</ToastStackContext.Provider>
