@@ -1,4 +1,8 @@
-import { ToastType } from '../context/ToastStackContext'
+export const enum ToastType {
+  Error,
+  Info,
+  Success
+}
 
 export const ToastMessage: Record<ToastType, Record<string, string>> = {
   [ToastType.Error]: {

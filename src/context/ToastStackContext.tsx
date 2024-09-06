@@ -1,13 +1,8 @@
 import React, { createContext, useReducer } from 'react'
+import { type ToastType } from '../model/Toast'
 
 export const enum ToastStackActionType {
   Toast
-}
-
-export const enum ToastType {
-  Error,
-  Info,
-  Success
 }
 
 export type ToastStackAction =
