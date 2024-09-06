@@ -50,7 +50,7 @@ function Main (): React.ReactElement {
 export function App (): React.ReactElement {
   return (
     <GridContextProvider>
-        <Main></Main>
+      <Main></Main>
     </GridContextProvider>
   )
 }
