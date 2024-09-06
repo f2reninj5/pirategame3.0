@@ -41,7 +41,7 @@ function Main (): React.ReactElement {
         <PlayerShufflerComponent></PlayerShufflerComponent>
       </PanelContainer>
       <FooterContainer><p>Copyright © 2024 Maks Nowak. Licensed under the <a
-          href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.</p>
+        href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.</p>
       </FooterContainer>
     </main>
   )
